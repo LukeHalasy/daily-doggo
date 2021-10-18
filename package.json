@@ -2,7 +2,7 @@
   "name": "daily-doggo",
   "private": true,
   "version": "0.0.1",
-  "description": "Stencil App Starter",
+  "description": "Daily Doggo",
   "scripts": {
     "build": "stencil build",
     "start": "stencil build --dev --watch --serve",

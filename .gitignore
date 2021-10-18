@@ -25,6 +25,10 @@ Thumbs.db
 UserInterfaceState.xcuserstate
 .env
 
+# Firebase stuff
+**/.firebase
+**/.firebaserc
+
 # Logs
 logs
 *.log
