@@ -53,21 +53,23 @@ export class DogList {
       return (
         <div>
           <select onInput={(e) => this.handleSelect(e)} name="breeds" id="name">
-            {
-              Object.keys(this.breedsList).map((breedName) => {
-                if (this.breedsList[breedName].length > 0) {
-                  return (this.breedsList[breedName].map((subBreedName) => {
-                    return (<option key={subBreedName} value={JSON.stringify({"breedName": breedName, "subBreedName": subBreedName})}>{
-                      subBreedName.charAt(0).toUpperCase() + subBreedName.slice(1) + " " + breedName.charAt(0).toUpperCase() + breedName.slice(1)
+            <optgroup>
+              {
+                Object.keys(this.breedsList).map((breedName) => {
+                  if (this.breedsList[breedName].length > 0) {
+                    return (this.breedsList[breedName].map((subBreedName) => {
+                      return (<option key={subBreedName} value={JSON.stringify({"breedName": breedName, "subBreedName": subBreedName})}>{
+                        subBreedName.charAt(0).toUpperCase() + subBreedName.slice(1) + " " + breedName.charAt(0).toUpperCase() + breedName.slice(1)
+                      }</option>)
+                    }))
+                  } else {
+                    return (<option key={breedName} value={JSON.stringify({"breedName": breedName})}>{
+                      breedName.charAt(0).toUpperCase() + breedName.slice(1)
                     }</option>)
-                  }))
-                } else {
-                  return (<option key={breedName} value={JSON.stringify({"breedName": breedName})}>{
-                    breedName.charAt(0).toUpperCase() + breedName.slice(1)
-                  }</option>)
-                }
-              })
-            }
+                  }
+                })
+              }
+            </optgroup>
           </select>
           <dog-display breedInfo={this.selectedBreedInfo} />
         </div>

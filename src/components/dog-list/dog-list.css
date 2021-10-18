@@ -4,3 +4,12 @@ div {
   align-items: center;
 }
 
+select {
+  padding: 7px;
+  margin: 20px;
+  font-size: 18px;
+}
+
+optgroup {
+  font-size: 12px
+}
