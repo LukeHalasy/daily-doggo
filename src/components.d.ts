@@ -5,18 +5,20 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { breedInfoType } from "./components/dog-list/dog-display/dog-display";
 export namespace Components {
-    interface AppRoot {
+    interface DogDisplay {
+        "breedInfo": breedInfoType;
     }
     interface DogList {
     }
 }
 declare global {
-    interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {
+    interface HTMLDogDisplayElement extends Components.DogDisplay, HTMLStencilElement {
     }
-    var HTMLAppRootElement: {
-        prototype: HTMLAppRootElement;
-        new (): HTMLAppRootElement;
+    var HTMLDogDisplayElement: {
+        prototype: HTMLDogDisplayElement;
+        new (): HTMLDogDisplayElement;
     };
     interface HTMLDogListElement extends Components.DogList, HTMLStencilElement {
     }
@@ -25,17 +27,18 @@ declare global {
         new (): HTMLDogListElement;
     };
     interface HTMLElementTagNameMap {
-        "app-root": HTMLAppRootElement;
+        "dog-display": HTMLDogDisplayElement;
         "dog-list": HTMLDogListElement;
     }
 }
 declare namespace LocalJSX {
-    interface AppRoot {
+    interface DogDisplay {
+        "breedInfo"?: breedInfoType;
     }
     interface DogList {
     }
     interface IntrinsicElements {
-        "app-root": AppRoot;
+        "dog-display": DogDisplay;
         "dog-list": DogList;
     }
 }
@@ -43,7 +46,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
+            "dog-display": LocalJSX.DogDisplay & JSXBase.HTMLAttributes<HTMLDogDisplayElement>;
             "dog-list": LocalJSX.DogList & JSXBase.HTMLAttributes<HTMLDogListElement>;
         }
     }
