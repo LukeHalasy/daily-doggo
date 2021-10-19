@@ -9,7 +9,7 @@ Built using purely stencil.js
 ## Installation
 If you want to run locally, 
 
-```console
+```shell
 git clone https://github.com/LukeHalasy/daily-doggo.git
 cd daily-doggo
 npm install
